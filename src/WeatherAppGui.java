@@ -2,7 +2,7 @@
  * @Author: Jason Y. Wu
  * @Date:   2024-04-28 04:06:06
  * @Last Modified by:   Jason Y. Wu
- * @Last Modified time: 2024-05-03 00:10:17
+ * @Last Modified time: 2024-05-03 01:00:13
  */
 import java.awt.Cursor;
 import java.awt.Font;
@@ -53,7 +53,7 @@ public class WeatherAppGui extends JFrame {
         add(searchTextField);
 
         // weather image
-        JLabel weatherConditionImage = new JLabel(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/BEGJaDww.png"));
+        JLabel weatherConditionImage = new JLabel(loadImage("src/assets/BEGJaDww.png"));
         weatherConditionImage.setBounds(0, 125, 450, 217);
         add(weatherConditionImage);
 
@@ -71,7 +71,7 @@ public class WeatherAppGui extends JFrame {
         add(weatherConditionDesc);
 
         // add humidity image
-        JLabel humidityImage = new JLabel(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/8t_ZPnx4.png"));
+        JLabel humidityImage = new JLabel(loadImage("src/assets/8t_ZPnx4.png"));
         humidityImage.setBounds(15, 500, 74, 66);
         add(humidityImage);
 
@@ -82,7 +82,7 @@ public class WeatherAppGui extends JFrame {
         add(humidityText);
 
         // add windspeed image
-        JLabel windspeedImage = new JLabel(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/_B2oOzDY.png"));
+        JLabel windspeedImage = new JLabel(loadImage("src/assets/_B2oOzDY.png"));
         windspeedImage.setBounds(220, 500, 74, 66);
         add(windspeedImage);
 
@@ -93,7 +93,7 @@ public class WeatherAppGui extends JFrame {
         add(windspeedText);
 
         // search button; JButton and JLabel allows us to init w an image obj
-        JButton searchButton = new JButton(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/yOB1lSDc.png"));
+        JButton searchButton = new JButton(loadImage("src/assets/yOB1lSDc.png"));
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));// change cursor to hand cursor when hovering over this button
         searchButton.setBounds(375, 13, 47, 45);
         searchButton.addActionListener(new ActionListener() {
@@ -113,16 +113,16 @@ public class WeatherAppGui extends JFrame {
                 String weatherCondition = (String) weatherData.get("weather_condition");
                 switch(weatherCondition){
                     case "Clear":
-                        weatherConditionImage.setIcon(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/BEGJaDww.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/BEGJaDww.png"));
                         break;
                     case "Cloudy":
-                        weatherConditionImage.setIcon(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/4-jw4bFE.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/4-jw4bFE.png"));
                         break;
                     case "Rain":
-                        weatherConditionImage.setIcon(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/TqGhyRy4.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/TqGhyRy4.png"));
                         break;
                     case "Snow":
-                        weatherConditionImage.setIcon(loadImage("/Users/jasonycwu/Desktop/WeatherApp/src/assets/lVFAbGEk.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/lVFAbGEk.png"));
                         break;
                 }
 

@@ -2,7 +2,7 @@
  * @Author: Jason Y. Wu
  * @Date:   2024-05-01 12:38:28
  * @Last Modified by:   Jason Y. Wu
- * @Last Modified time: 2024-05-03 00:13:52
+ * @Last Modified time: 2024-05-03 01:07:40
  */
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -63,6 +63,7 @@ public class WeatherApp {
 
             // retrieve all hourly data
             JSONObject hourly = (JSONObject) resultJsonObj.get("hourly");
+            System.out.println(hourly);
             
             // get current hour data
             JSONArray time = (JSONArray) hourly.get("time");
@@ -74,15 +75,15 @@ public class WeatherApp {
             double temperature = (double) temperatureData.get(index);
             
             // get weather code
-            JSONArray weatherCode = (JSONArray) hourly.get("weathercode");
+            JSONArray weatherCode = (JSONArray) hourly.get("weather_code");
             String weatherCondition = convertWeatherCode((long) weatherCode.get(index));
 
             // get humidity
-            JSONArray relativeHumidity = (JSONArray) hourly.get("relativehumidity_2m");
+            JSONArray relativeHumidity = (JSONArray) hourly.get("relative_humidity_2m");
             long humidity = (long) relativeHumidity.get(index);
 
             // get windspeed
-            JSONArray windspeedData = (JSONArray) hourly.get("windspeed_10m");
+            JSONArray windspeedData = (JSONArray) hourly.get("wind_speed_10m");
             double windspeed = (double) windspeedData.get(index);
 
             // build weather json data obj for access by front end
